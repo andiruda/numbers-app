@@ -113,7 +113,7 @@ function update_numbers(){
 function _execute($query,$type){
     $servername = "127.0.0.1";
     $username = "root";
-    $password = "Access1234!";
+    $password = "ds4321";
     $dbname = "numbers";
     // Create connection
     $mysqli = new mysqli($servername, $username, $password, $dbname);
