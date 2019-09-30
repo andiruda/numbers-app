@@ -32,7 +32,7 @@ numbersApp.controller('MainController', function($scope, $rootScope, $timeout) {
 numbersApp.controller('ListDrawsController', function ($scope,$rootScope,$http) {
 
     $scope.$on('reloadSection',function(event){
-        $http.get('php/controller.php?page=listDraws&start='+moment($scope.start).format("YYYY-MM-DD")+'&end='+moment($scope.end).format("YYYY-MM-DD"))
+        $http.get('../php/controller.php?page=listDraws&start='+moment($scope.start).format("YYYY-MM-DD")+'&end='+moment($scope.end).format("YYYY-MM-DD"))
         .then(function(response) {
             $scope.draws = response.data;
             console.log(response.data);
@@ -43,7 +43,7 @@ numbersApp.controller('ListDrawsController', function ($scope,$rootScope,$http) 
 
 numbersApp.controller('ListTopNumbers', function ($scope, $http){
     $scope.$on('reloadSection',function(event){
-        $http.get('php/controller.php?page=topNumbers&start='+moment($scope.start).format("YYYY-MM-DD")+'&end='+moment($scope.end).format("YYYY-MM-DD")+'&limit='+$scope.limit+'&pb=false')
+        $http.get('../php/controller.php?page=topNumbers&start='+moment($scope.start).format("YYYY-MM-DD")+'&end='+moment($scope.end).format("YYYY-MM-DD")+'&limit='+$scope.limit+'&pb=false')
         .then(function(response) {
             $scope.tops = response.data;
             console.log(response.data);
@@ -54,7 +54,7 @@ numbersApp.controller('ListTopNumbers', function ($scope, $http){
 
 numbersApp.controller('ListTopPbs', function ($scope, $http){
     $scope.$on('reloadSection',function(event){
-        $http.get('php/controller.php?page=topNumbers&start='+moment($scope.start).format("YYYY-MM-DD")+'&end='+moment($scope.end).format("YYYY-MM-DD")+'&limit='+$scope.limit+'&pb=true')
+        $http.get('../php/controller.php?page=topNumbers&start='+moment($scope.start).format("YYYY-MM-DD")+'&end='+moment($scope.end).format("YYYY-MM-DD")+'&limit='+$scope.limit+'&pb=true')
         .then(function(response) {
             $scope.pbs = response.data;
             console.log(response.data);
@@ -64,7 +64,7 @@ numbersApp.controller('ListTopPbs', function ($scope, $http){
 
 numbersApp.controller('luckyNumbers', function ($scope, $http){
     $scope.$on('reloadSection',function(event){
-        $http.get('php/controller.php?page=luckyNumbers&start='+moment($scope.start).format("YYYY-MM-DD")+'&end='+moment($scope.end).format("YYYY-MM-DD")+'&limit='+$scope.limit+'&pb=true')
+        $http.get('../php/controller.php?page=luckyNumbers&start='+moment($scope.start).format("YYYY-MM-DD")+'&end='+moment($scope.end).format("YYYY-MM-DD")+'&limit='+$scope.limit+'&pb=true')
         .then(function(response) {
             $scope.luckyNumbers = response.data;
             console.log(response.data);
