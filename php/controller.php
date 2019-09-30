@@ -1,4 +1,5 @@
 <?php
+require '/.config';
 $url_page = isset($_GET["page"]);
 $page = $url_page ? htmlspecialchars($_GET["page"]) : false;
 $date_start = isset($_GET["start"]);
@@ -111,10 +112,10 @@ function update_numbers(){
 }
 
 function _execute($query,$type){
-    $servername = "127.0.0.1";
-    $username = "root";
-    $password = "ds4321";
-    $dbname = "numbers";
+    $servername = $DB_HOST;
+    $username = $DB_USER;
+    $password = $DB_PASS;
+    $dbname = $DB_NAME;
     // Create connection
     $mysqli = new mysqli($servername, $username, $password, $dbname);
     // Check connection
