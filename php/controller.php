@@ -161,7 +161,8 @@ function _execute($query,$type){
     $mysqli->close();
 }
 
-function list_draws($start="now()-interval 30 day",$end="now()",$limit='69'){
+function list_draws($start="now()-interval 30 day",$end="now()"){
+    $limit = '60';
     $q = "SELECT * FROM numbers WHERE `date` BETWEEN '$start' AND '$end' limit $limit;";
     $results = _execute($q,'read');
     $output = array();

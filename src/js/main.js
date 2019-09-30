@@ -32,7 +32,7 @@ numbersApp.controller('MainController', function($scope, $rootScope, $timeout) {
 numbersApp.controller('ListDrawsController', function ($scope,$rootScope,$http) {
 
     $scope.$on('reloadSection',function(event){
-        $http.get('php/controller.php?page=listDraws&start='+moment($scope.start).format("YYYY-MM-DD")+'&end='+moment($scope.end).format("YYYY-MM-DD")+'&limit='+$scope.limit)
+        $http.get('php/controller.php?page=listDraws&start='+moment($scope.start).format("YYYY-MM-DD")+'&end='+moment($scope.end).format("YYYY-MM-DD"))
         .then(function(response) {
             $scope.draws = response.data;
             console.log(response.data);
