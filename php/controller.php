@@ -116,7 +116,6 @@ function _execute($query,$type){
     $username = $GLOBALS['DB_USER'];
     $password = $GLOBALS['DB_PASS'];
     $dbname = $GLOBALS['DB_NAME'];
-    debug($DB_HOST);
     // Create connection
     $mysqli = new mysqli($servername, $username, $password, $dbname);
     // Check connection
