@@ -1,5 +1,5 @@
 <?php
-require 'home/ubuntu/numbers.andiruda.com/php/config.php';
+require '/home/ubuntu/numbers.andiruda.com/php/config.php';
 $url_page = isset($_GET["page"]);
 $page = $url_page ? htmlspecialchars($_GET["page"]) : false;
 $date_start = isset($_GET["start"]);
