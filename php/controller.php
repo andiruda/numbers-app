@@ -112,10 +112,11 @@ function update_numbers(){
 }
 
 function _execute($query,$type){
-    $servername = $DB_HOST;
-    $username = $DB_USER;
-    $password = $DB_PASS;
-    $dbname = $DB_NAME;
+    $servername = $GLOBALS['DB_HOST'];
+    $username = $GLOBALS['DB_USER'];
+    $password = $GLOBALS['DB_PASS'];
+    $dbname = $GLOBALS['DB_NAME'];
+    debug($DB_HOST);
     // Create connection
     $mysqli = new mysqli($servername, $username, $password, $dbname);
     // Check connection
