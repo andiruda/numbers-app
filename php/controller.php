@@ -164,7 +164,7 @@ function _execute($query,$type){
 
 function list_draws($start="now()-interval 30 day",$end="now()"){
     $limit = '60';
-    $q = "SELECT * FROM numbers WHERE `date` BETWEEN '$start' AND '$end' limit $limit;";
+    $q = "SELECT * FROM numbers WHERE `date` BETWEEN '$start' AND '$end' order by `date` desc, `powerball` asc, `num` limit $limit;";
     $results = _execute($q,'read');
     $output = array();
     foreach($results as $r){
